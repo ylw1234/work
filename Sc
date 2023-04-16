@@ -1,0 +1,76 @@
+public static void main(String[] args) {
+     System.out.println("1、B 2、B 3、D 4、A 5、D") ;
+     showTriangle(n) ;
+     reverseString(s);
+     isPalindrome(num);
+     ShuiXianHua();
+     arraysDemo(a[]);
+}
+public static void showTriangle(int n){
+		    for (int i = 1; i <= n; i++) {
+		      for (int k = 1; k <= n - i; k++) {
+			       System.out.print(" ");
+		      }
+		      for (int j = 1; j <= i * 2 - 1; j++) {
+			      System.out.print("*");
+		      }
+		      System.out.println();
+		      System.out.println();
+   	    }
+}
+public static void reverseString(String s) {
+        char[] chars = s.toCharArray();  
+        char[] reverse = new char[chars.length+1];
+        for(int i=chars.length-1;i>=0;i--){
+            reverse[chars.length-i]=chars[i];
+        }
+        String s1 = String.valueOf(reverse);
+        System.out.println(s1) ;
+}
+public static void isPalindrome(int num) {
+        boolean flag = false;
+        String str1 = num + "";  
+        StringBuilder str2 = new StringBuilder(str1);  
+        str2.reverse();  
+        int count = 0;  
+        for (int i = 0; i < str1.length(); i++) {  
+            if (str1.charAt(i) != str2.charAt(i)) { 
+            	flag = false;
+                break;  
+            } 
+            else {  
+                count++;  
+            }  
+        }  
+        if (count == str1.length()) {  
+            flag=true;
+        }  
+        if (flag) {
+            System.out.println("是的") ; 
+        } 
+        else
+            System.out.println("不是") ;
+}
+public static void ShuiXianHua() { 
+    for(int n=100;n<1000;n++) {
+		       int a=n%10;   //个位
+		       int b=n/10%10;//十位
+		       int c=n/100;  //百位
+		       if(Math.pow(a, 3)+Math.pow(b, 3)+Math.pow(c, 3)==n) {
+		          System.out.print(n+" ");
+		       }
+		}
+}
+public static void arraysDemo(int a[]) { //操作
+        int max = a[0];
+        int min = a[0];
+        for (int i = 1; i < 10; i++) {
+            if (a[i] > max) {
+                max = a[i];
+            } else if (a[i] < min) {
+                min = a[i];
+            }
+        }   
+        System.out.println();
+        System.out.println(max+min);    
+}
