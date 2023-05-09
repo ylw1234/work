@@ -2,7 +2,7 @@ package text;
 import java.util.*;
 public class Sc1 {
     public static void main(String[] args) {
-        System.out.println("<------ç¬¬ä¸€é¢˜------->");
+        System.out.println("<------µÚÒ»Ìâ------->");
         Monkey monkey = new Monkey("king");
         System.out.println("monkey's name:"+monkey.name);
         monkey.speak();
@@ -12,7 +12,7 @@ public class Sc1 {
         people.think();
         
         
-        System.out.println("<-------ç¬¬äºŒé¢˜------->");
+        System.out.println("<-------µÚ¶şÌâ------->");
         Car car = new Car(4,1150,3);
         System.out.println(car);
         System.out.println("----------------------------");
@@ -20,14 +20,14 @@ public class Sc1 {
         System.out.println(truck);
         
         
-        System.out.println("<-------ç¬¬ä¸‰é¢˜------->");
-        System.out.println(getSum("13829579081298345918257","438823897418920918472193"));
+        System.out.println("<-------µÚÈıÌâ------->");
+        System.out.println(getSum("46529156841298344697257","764916438246319842695173"));
 
         
-        System.out.println("<-------ç¬¬äº”é¢˜------->");
-        System.out.println("è¾“å…¥ä¸å­˜åœ¨å…¬å…±å‰ç¼€ã€‚"+longestCommonPrefix(new String[]{"f1ower","f1ow","f1ight"}));
+        System.out.println("<-------µÚÎåÌâ------->");
+        System.out.println("ÊäÈë²»´æÔÚ¹«¹²Ç°×º¡£"+longestCommonPrefix(new String[]{"f1ower","f1ow","f1ight"}));
     }
-    //ç¬¬ä¸‰é¢˜
+    //µÚÈıÌâ
     public static String getSum(String a,String b){
         List<Integer> la = new ArrayList<Integer>();
         List<Integer> lb = new ArrayList<Integer>();
@@ -48,19 +48,19 @@ public class Sc1 {
             if(i<lb.size()){
                 temp+= lb.get(i);
             }
-            lc.add(tmp%10);
+            lc.add(temp%10);
             temp/= 10;
         }
-        if(tmp>0)
+        if(temp>0)
             lc.add(temp%10);
         for(int i = lc.size()-1;i>=0;i--){
             c += lc.get(i);
         }
         return c;
     }
-    //ç¬¬ä¸‰é¢˜
+    //µÚÈıÌâ
 
-    //ç¬¬äº”é¢˜
+    //µÚÎåÌâ
     public static String longestCommonPrefix(String[] strs) {
         if (strs==null||strs.length==0) {
             return "";
@@ -77,34 +77,32 @@ public class Sc1 {
         }
         return strs[0];
     }
-    //ç¬¬äº”é¢˜
+    //µÚÎåÌâ
 }
-//ç¬¬ä¸€é¢˜
+//µÚÒ»Ìâ
 class Monkey{
     String name;
     public Monkey(String s){
         this.name = s;
     }
     public void speak(){
-        System.out.println("å’¿å’¿å‘€å‘€ ......");
+        System.out.println("ßŞßŞÑ½Ñ½ ......");
     }
 }
 class People extends Monkey{
-	public People(){
-    }
     public People(String s){
         super(s);
     }
     public void speak(){
-        System.out.println("å°æ ·å„¿ï¼Œä¸é”™å˜›ï¼ä¼šè¯´è¯äº†ï¼");
+        System.out.println("Ğ¡Ñù¶ù£¬²»´íÂï£¡»áËµ»°ÁË£¡");
     }
     public void think(){
-        System.out.println("åˆ«è¯´è¯ï¼è®¤çœŸ æ€è€ƒï¼ ");
+        System.out.println("±ğËµ»°£¡ÈÏÕæ Ë¼¿¼£¡ ");
     }
 }
-//ç¬¬ä¸€é¢˜
+//µÚÒ»Ìâ
 
-//ç¬¬äºŒé¢˜
+//µÚ¶şÌâ
 class Vehicle{
     int wheels;
     double weight;
@@ -124,8 +122,8 @@ class Car extends Vehicle{
         this.loader = loader;
     }
     public String toString(){
-        return "è½¦è½®çš„ä¸ªæ•°æ˜¯"+wheels+" è½¦é‡" + weight
-                +"\nè¿™æ˜¯ä¸€è¾†å°è½¦ï¼Œèƒ½è½½6äººï¼Œå®è½½"+loader+"äºº"+(loader>6? ",ä½ è¶…å‘˜äº†!":"");
+        return "³µÂÖµÄ¸öÊıÊÇ"+wheels+" ³µÖØ" + weight
+                +"\nÕâÊÇÒ»Á¾Ğ¡³µ£¬ÄÜÔØ6ÈË£¬ÊµÔØ"+loader+"ÈË"+(loader>6? ",Äã³¬Ô±ÁË!":"");
     }
 }
 class Truck extends Vehicle{
@@ -137,10 +135,9 @@ class Truck extends Vehicle{
         this.payload = payload;
     }
     public String toString(){
-        return "è½¦è½®çš„ä¸ªæ•°æ˜¯"+wheels+" è½¦é‡" + weight
-                +"\nè¿™æ˜¯ä¸€è¾†å¡è½¦ï¼Œèƒ½è½½3äººï¼Œå®è½½"+loader+"äºº"+(loader>3? ",ä½ è¶…å‘˜äº†!":"")
-                +"\nè¿™æ˜¯ä¸€è¾†å¡è½¦ï¼Œæ ¸è½½5000kgï¼Œä½ å·²è£…è½½"+payload+"kg"+(payload>5000? ",ä½ è¶…è½½äº†!":"");
+        return "³µÂÖµÄ¸öÊıÊÇ"+wheels+" ³µÖØ" + weight
+                +"\nÕâÊÇÒ»Á¾¿¨³µ£¬ÄÜÔØ3ÈË£¬ÊµÔØ"+loader+"ÈË"+(loader>3? ",Äã³¬Ô±ÁË!":"")
+                +"\nÕâÊÇÒ»Á¾¿¨³µ£¬ºËÔØ5000kg£¬ÄãÒÑ×°ÔØ"+payload+"kg"+(payload>5000? ",Äã³¬ÔØÁË!":"");
     }
 }
-//ç¬¬äºŒé¢˜
-
+//µÚ¶şÌâ
